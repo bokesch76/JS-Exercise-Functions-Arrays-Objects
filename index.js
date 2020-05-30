@@ -252,9 +252,12 @@ getCarInfoByIndex(data, 0)
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
 */
-function getLastCarInfo(/* code here */) {
-  /* code here */
+function getLastCarInfo(inventory) {
+  const lastCar = inventory[inventory.length-1];
+  console.log(`This is a ${lastCar.car_make} ${lastCar.car_model}`)
 }
+
+getLastCarInfo(data)
 
 /**
  * ### Challenge `getModelYears`
@@ -265,8 +268,13 @@ function getLastCarInfo(/* code here */) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * getModelYears returns an array containing all the 'car_year's in the inventory.
 */
-function getModelYears(/* code here */) {
-  /* code here */
+const modelYears = [inventory.car_year]
+function getModelYears(inventory) {
+  
+  for (let i = 0; i < modelYears.length; i++) {
+  
+  console.log(inventory[inventory.car_year])
+}
 }
 
 /**
@@ -283,9 +291,11 @@ function getModelYears(/* code here */) {
  * For example, if getCarInfoById is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoById(/* code here */) {
-  /* code here */
+function getCarInfoById(inventory, id) {
+  const infoById = inventory[inventory.id];
+  console.log(`This is a ${infoById.car_make} ${infoById.car_model}`)
 }
+getCarInfoById(data, 2)
 
 /**
  * ### Challenge `getOlderCars`
