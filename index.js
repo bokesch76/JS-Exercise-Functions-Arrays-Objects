@@ -268,15 +268,16 @@ getLastCarInfo(data)
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * getModelYears returns an array containing all the 'car_year's in the inventory.
 */
-const modelYears = [inventory.car_year]
 function getModelYears(inventory) {
   
-  for (let i = 0; i < modelYears.length; i++) {
+  let modelYear = {};
+  for (let i = 0; i < inventory.length; i++) {
+   console.log (inventory[i].car_year)
+  }
   
-  console.log(inventory[inventory.car_year])
-}
 }
 
+getModelYears(data)
 /**
  * ### Challenge `getCarInfoById`
  *  * * THIS ONE IS A STRETCH GOAL. ATTEMPT IT ONLY AFTER
@@ -292,8 +293,8 @@ function getModelYears(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoById(inventory, id) {
-  const infoById = inventory[inventory.id];
-  console.log(`This is a ${infoById.car_make} ${infoById.car_model}`)
+  const carInfo = inventory[id-1];
+  return `This is a ${carInfo.car_make} ${carInfo.car_model}`
 }
 getCarInfoById(data, 2)
 
@@ -311,9 +312,16 @@ getCarInfoById(data, 2)
  * with a `car_year` which is at most the given desired max year,
  * in the same order as they appear in the original inventory.
 */
-function getOlderCars(/* code here */) {
-  /* code here */
+function getOlderCars(inventory, maxYear) {
+  let olderCarss = [];
+  for (let i = 0; i < inventory.length; i++) {
+    if (inventory[i].car_year <= maxYear)
+    {
+      console.log (inventory[i].car_year, inventory[i].car_make, inventory[i].car_model)
+    }
+  }
 }
+getOlderCars(data, 1999)
 
 /**
  * ### Challenge `getGermanCars`
